@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,23 +13,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final Button encryptButton = findViewById(R.id.encryptBtn);
         final Button decryptButton = findViewById(R.id.decryptBtn);
 
-        encryptButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
+        final EditText editText = findViewById(R.id.editText);
+
+        editText.setText("Dupsko");
+
+        encryptButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                cryptoObject = new Cryptography(editText.getText().toString());
+                editText.setText(cryptoObject.encrypt());
             }
         });
 
-        decryptButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
+        decryptButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                cryptoObject = new Cryptography(editText.getText().toString());
+                editText.setText(cryptoObject.encrypt());
             }
         });
 
