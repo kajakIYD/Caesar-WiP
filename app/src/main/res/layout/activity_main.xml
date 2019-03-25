@@ -14,7 +14,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/encryptBtn"
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:text="Paste and encrypt"
@@ -23,7 +23,7 @@
             tools:layout_editor_absoluteY="578dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/decryptBtn"
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:text="Decrypt and Paste"
